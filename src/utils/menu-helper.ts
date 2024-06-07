@@ -7,4 +7,5 @@ export const routeToKeyMap: { [key: string]: string } = {
     "/admin/users": "2",
     "/admin/adoptions": "3",
     "/admin/my-animal-reports": "4",
+    "/admin/pending-rescues": "5",
 };

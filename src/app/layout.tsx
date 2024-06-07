@@ -2,10 +2,6 @@ import type { Metadata } from "next";
 import { Poppins  } from "next/font/google";
 import "./globals.css";
 import { AntdRegistry } from '@ant-design/nextjs-registry';
-import { Layout } from "antd";
-import Sider from "antd/es/layout/Sider";
-import { Content } from "antd/es/layout/layout";
-import { AppBreadcrumb, AppFooter, AppHeader, AppSideMenu } from "@/components";
 
 
 const poppins = Poppins({

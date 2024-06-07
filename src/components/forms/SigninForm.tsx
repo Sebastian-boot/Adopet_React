@@ -1,10 +1,8 @@
 "use client";
 import { Button, Checkbox, Form, FormProps, Input } from 'antd'
-import Link from 'next/link';
 import React from 'react'
 
 import './styles.scss';
-import { GoogleOutlined } from '@ant-design/icons';
 import { GoogleIcon } from '../icons/GoogleIcon';
 
 
@@ -66,7 +64,7 @@ export const SigninForm = () => {
                   </Button>
                 </Form.Item>
                 <Form.Item>
-                  <Button className='w-full px-4 py-2' shape="round" htmlType="submit">
+                  <Button className='w-full px-4 py-2' shape="round" htmlType="button" href='/auth/create-account'>
                     ¡Crea una cuenta!
                   </Button>
                 </Form.Item>
@@ -93,8 +91,8 @@ export const SigninForm = () => {
                 </Form.Item>
               </Form>
 					</div>
-					<div className="w-full h-auto bg-[#5B53D1] hidden lg:flex lg:flex-col lg:justify-center lg:items-center lg:w-1/2 bg-cover rounded-r-lg">
-            <h1 className="text-white font-bold text-lg font-thin italic">¡Que Gusto Volver a Verte!</h1>
+					<div className="w-full h-auto bg-indigo-700 hidden lg:flex lg:flex-col lg:justify-center lg:items-center lg:w-1/2 bg-cover rounded-r-lg">
+            <h2 className="text-white text-lg font-thin italic">¡Que Gusto Volver a Verte!</h2>
             <h1 className="text-white  font-bold text-4xl	underline mb-4 uppercase">Bienvenido de Nuevo</h1>
             <p className='text-center text-white'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste repellat, consectetur nisi tempora eligendi delectus beatae saepe odit explicabo ea quibusdam, modi fugiat? Voluptate eos natus magnam asperiores quaerat. Magni.</p>
           </div>

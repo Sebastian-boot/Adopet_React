@@ -4,6 +4,7 @@ import React from 'react'
 
 import './styles.scss';
 import { GoogleIcon } from '../icons/GoogleIcon';
+import Link from 'next/link';
 
 
 type FieldType = {
@@ -64,8 +65,10 @@ export const SigninForm = () => {
                   </Button>
                 </Form.Item>
                 <Form.Item>
-                  <Button className='w-full px-4 py-2' shape="round" htmlType="button" href='/auth/create-account'>
+                  <Button className='w-full px-4 py-2' shape="round" htmlType="button">
+                  <Link href='/auth/create-account'>
                     ¡Crea una cuenta!
+                  </Link>
                   </Button>
                 </Form.Item>
                 <div className="flex justify-end mb-4">
@@ -86,7 +89,7 @@ export const SigninForm = () => {
                     icon={<GoogleIcon width={20} height={20} />}
                     htmlType="button"
                     type="text">
-                    Usar Google
+                      Usar Google
                   </Button>
                 </Form.Item>
               </Form>

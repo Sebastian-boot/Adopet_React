@@ -2,6 +2,7 @@
 import { Button, Checkbox, DatePicker, Form, FormProps, Input, Select, Row, Col } from 'antd';
 import { Option } from 'antd/es/mentions';
 import './styles.scss';
+import Link from 'next/link';
 
 type FieldType = {
   name?: string;
@@ -42,7 +43,12 @@ export const SignupForm = () => {
         <div className="w-full xl:w-3/4 lg:w-11/12 flex">
           <div className="w-full h-auto bg-indigo-700 hidden lg:flex lg:flex-col lg:justify-center lg:items-center lg:w-1/2 bg-cover rounded-l-lg">
             <h1 className="text-white mb-4 font-bold text-lg uppercase">Uniendo Comunidades y Rescatistas</h1>
-            <img src="/images/mascotas.png" alt="" className="rounded-full h-48 w-48 object-cover object-center" />
+            <img src="/images/mascotas.png" alt="" className="rounded-full h-48 w-48 object-cover object-center mb-4" />
+            <Button type='primary' htmlType="button" >
+              <Link href='/auth/login'>
+                ¿Ya tienes cuenta con nosotros?
+              </Link>
+            </Button>
           </div>
 
           <div className="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">

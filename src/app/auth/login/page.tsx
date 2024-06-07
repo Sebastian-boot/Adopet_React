@@ -1,8 +1,8 @@
+import { SigninForm } from "@/components/forms/SigninForm";
+
 const Login = () => {
   return (
-    <main>
-      test
-    </main>
+    <SigninForm/>
   );
 }
 

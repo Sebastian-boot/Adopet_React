@@ -19,22 +19,22 @@ export const AppSideMenu = () => {
 
   const menuItems: MenuItem[] = [
     {
-      label: <Link href="/dashboard">Dashboard</Link>,
+      label: <Link href="/admin/dashboard">Dashboard</Link>,
       key: "1",
       icon: <IconUsersGroup stroke={1} size={16} />
     },
     {
-      label: <Link href="/users">Usuarios</Link>,
+      label: <Link href="/admin/users">Usuarios</Link>,
       key: "2",
       icon: <IconUsersGroup stroke={1} size={16} />
     },
     {
-      label: <Link href="/adoptions">Adopciones</Link>,
+      label: <Link href="/admin/adoptions">Adopciones</Link>,
       key: "3",
       icon: <IconPaw stroke={1} size={16} />
     },
     {
-      label: <Link href="/my-animal-reports">Mis Reportes</Link>,
+      label: <Link href="/admin/my-animal-reports">Mis Reportes</Link>,
       key: "4",
       icon: <IconHeartStar stroke={1} size={16} />
     },

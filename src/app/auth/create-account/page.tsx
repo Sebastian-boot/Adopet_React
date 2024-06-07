@@ -1,8 +1,8 @@
-import Link from "next/link";
+import { SignupForm } from "@/components/forms/SignupForm"
 
 const CreateAccount = () => {
     return (
-        <div>test</div>
+        <SignupForm/>
     )
 }
 

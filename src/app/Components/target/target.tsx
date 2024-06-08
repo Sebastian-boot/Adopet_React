@@ -1,11 +1,11 @@
-import style from './css/syles.module.css';
+import style from './syles.module.css';
 
 export default function Target() {
   return (
     <main>
       <div className={style.containerTarget}>
         <div>
-          <img className={style.img} src="imagenes/animal.png" alt="#" />
+          <img className={style.img} src="../../imagenes/animal.png" alt="" />
         </div>
         <div className={style.container}>
           <div className={style.title}>

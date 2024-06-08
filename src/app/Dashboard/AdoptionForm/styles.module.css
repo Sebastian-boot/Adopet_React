@@ -1,0 +1,134 @@
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+.notification {
+    font-size: 2rem;
+    color: black;
+    margin-right: 1rem;
+}
+
+.notification:hover {
+    background-color: aqua;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.face {
+    font-size: 3rem;
+}
+
+.name {
+    text-align: center;
+    padding-left: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.text {
+    width: 90%;
+    height: 18vh;
+}
+
+.title {
+    font-size: 3rem;
+    padding-bottom: 1rem;
+}
+
+.parrafo {
+    margin-top: 2rem;
+}
+
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.form {
+    padding-left: 2rem;
+}
+
+.textForm {
+    padding: 2rem;
+}
+
+.parrafoForm {
+    margin-top: 1rem;
+}
+
+.containerForm {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.titleForm {
+    margin: 2rem;
+}
+
+.titleForm1 {
+    margin: 2rem;
+    padding-bottom: 10rem;
+}
+
+.titleForm2 {
+    margin: 2rem;
+    position: relative;
+    bottom: 5.5rem;
+}
+
+.inputForm {
+    padding: .6rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #dadada;
+    margin: .5rem;
+    width: 17rem;
+}
+
+.inputtextForm {
+    padding: .6rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #dadada;
+    margin: .5rem;
+    width: 35rem;
+    height: 8rem;
+}
+
+.inputs {
+    padding-bottom: 2rem;
+}
+
+.file {
+    padding: .6rem;
+    border-radius: 1rem;
+    
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 5rem;
+}
+
+.buttonForm {
+    border: none;
+    background-color: #5B53D1;
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}

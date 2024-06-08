@@ -4,24 +4,12 @@ import { BiMenuAltLeft } from "react-icons/bi";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { HiMiniUserCircle } from "react-icons/hi2";
-import Target from '../Components/target';
+import Target from '../../Components/target/target';
 import Link from "next/link";
 
 export default function Adoption() {
     return (
         <>
-            <nav className={styles.nav}>
-                <BiMenuAltLeft className={styles.menu} />
-                <div className={styles.search}>
-                    <Link href={"#"}><IoSearchOutline className={styles.icon} /></Link>
-                    <input className={styles.input} type="search" name="" id="" placeholder="Buscar en Adopet" />
-                </div>
-                <Link href={"#"}><IoNotificationsOutline className={styles.notification} /></Link>
-                <div className={styles.user}>
-                    <HiMiniUserCircle className={styles.face} />
-                    <h5 className={styles.name}>User</h5>
-                </div>
-            </nav>
             <section className={styles.section}>
                 <div className={styles.text}>
                     <h3 className={styles.title}>Adopciones</h3>
@@ -61,7 +49,7 @@ export default function Adoption() {
                             </div>
                         </div>
                         <div className={styles.containerTarget}>
-                            <Target />
+                            <div className={styles.target}><Target /></div>
                         </div>
                     </div>
                 </div>

@@ -14,7 +14,7 @@ export interface ErrorResponse {
 }
 
 export class ServiceResponse<T> {
-    public data?: T;
+    public response?: T;
     public errors: ApiError[];
     public httpCode: number;
 

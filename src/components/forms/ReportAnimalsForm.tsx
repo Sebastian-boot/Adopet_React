@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from 'react';
 import { Button, Checkbox, DatePicker, Form, FormProps, Input, Select, Row, Col, Upload } from 'antd';
 import styles from './forms.module.scss';
@@ -8,6 +7,8 @@ import Link from 'next/link';
 const { TextArea } = Input;
 const { Option } = Select;
 import type { GetProp, UploadProps } from 'antd';
+import { ReportAbandonedAnimalAddType } from '@/api/models/reportAbandonedAnimal';
+import ReportAbandonedAnimalService from '@/api/services/reportAbandonedAnimalService';
 
 
 type FieldType = {
@@ -41,17 +42,48 @@ type FormType = {
   observations: string;
 };
 
-const prefixSelector = (
-  <Form.Item name="prefix" noStyle>
-    <Select style={{ width: 70 }}>
-      <Select.Option key='57' value="57">+57</Select.Option>
-      <Select.Option key='58' value="87">+87</Select.Option>
-    </Select>
-  </Form.Item>
-);
 
-const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
-  console.log('Success:', values);
+const onFinish: FormProps<ReportAbandonedAnimalAddType>['onFinish'] = async (values) => {
+  const dataEnviar: ReportAbandonedAnimalAddType = {
+    animals: [
+        {
+            "name": "Golfo",
+            "image": "https://hips.hearstapps.com/hmg-prod/images/gettyimages-1422023439-64f1eaf518ace.jpg?crop=0.665xw:0.998xh;0.0641xw,0&resize=1200:*",
+            "description": "Es un perro macho pitbull con ojos verdes",
+            "age": 2,
+            "coat_color": "Blanco",
+            "especie": "Perro",
+            "race": "Pitbull",
+            "weight": 21,
+            "gender": "MALE"
+        },
+        {
+            "name": "Golfo",
+            "image": "https://hips.hearstapps.com/hmg-prod/images/gettyimages-1422023439-64f1eaf518ace.jpg?crop=0.665xw:0.998xh;0.0641xw,0&resize=1200:*",
+            "description": "Es un perro macho pitbull con ojos verdes",
+            "age": 2,
+            "coat_color": "Blanco",
+            "especie": "Perro",
+            "race": "Pitbull",
+            "weight": 23,
+            "gender": "MALE"
+        }
+    ],
+    reporting_user: {
+        "name": "John",
+        "surname": "Doe",
+        "email": "johm.doe@email.com",
+        "phone": "3214567891"
+    },
+    title: "Title",
+    description: "Hay un perro abandonado en situación critica, por favor atender rápido",
+    image: "https://hips.hearstapps.com/hmg-prod/images/gettyimages-1422023439-64f1eaf518ace.jpg?crop=0.665xw:0.998xh;0.0641xw,0&resize=1200:*",
+    abandonment_location: "Cr 122 # 76 - 14",
+    abandonment_status: "CRITICAL"
+}
+  await ReportAbandonedAnimalService.post(dataEnviar).then((response) => {
+    console.log(response);
+  });
 };
 
 const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {

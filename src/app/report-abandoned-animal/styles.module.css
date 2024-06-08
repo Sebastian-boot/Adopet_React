@@ -10,13 +10,13 @@
     padding: 20px;
     margin: 20px auto;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 800px;
 }
 
-.context h4 {
+.context h3 {
     margin: 0;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
 }
 
@@ -26,42 +26,54 @@
 }
 
 .h2 {
-    font-size: 20px;
+    font-size: 23px;
     margin-bottom: 20px;
 }
 
-.container{
+.container {
     display: flex;
     flex-wrap: wrap;
-    
 }
+
 .form {
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
 .form div {
     flex: 1 1 45%;
+    display: flex;
+    align-items: center;
     margin: 10px;
     min-width: 200px;
 }
 
-.label {
-    display: block;
-    margin-bottom: 5px;
+.labels {
+    margin-right: 20px; /* Aumenta la distancia entre el label y el input */
     font-weight: bold;
+    width: 100px; /* Ajusta este valor según sea necesario */
 }
 
 .input[type="text"],
 .select {
-    width: calc(100% - 20px);
+    flex: 1;
     padding: 10px;
-    margin: 5px 0 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    margin: 5px 0;
+    border: 2px solid #3b3a3a;
+    border-radius: 5px; /* Borde redondeado */
     box-sizing: border-box;
+    background-color: #f0f0f0; /* Color gris claro */
 }
 
+.input[type="text"]::placeholder {
+    color: #999; 
+    /* Color del texto del placeholder */
+}
+.inputs{
+    border: 1px solid #3b3a3a;
+    border-radius: 10px;
+}
 .submit {
     background-color: #6200ea;
     color: white;
@@ -69,6 +81,7 @@
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 .submit:hover {

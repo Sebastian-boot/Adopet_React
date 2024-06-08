@@ -2,8 +2,8 @@ import { ApiResources } from "@/config/api"
 import FetchService from "./fetchService";
 import { ReportAbandonedAnimalResponse } from "../models/reportAbandonedAnimal";
 
-class ReportAbandonedAnimal {
-    static url = process.env.API_URL + ApiResources.REPORT_ABANDONED_ANIMAL;
+class ReportAbandonedAnimalService {
+    static url = process.env.NEXT_PUBLIC_API_LARAVEL_URL + ApiResources.REPORT_ABANDONED_ANIMAL;
 
     public static async fetch() {
         return await FetchService.get<ReportAbandonedAnimalResponse>({url: this.url});
@@ -11,4 +11,4 @@ class ReportAbandonedAnimal {
 
 }
 
-export default ReportAbandonedAnimal;
+export default ReportAbandonedAnimalService;

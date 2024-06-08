@@ -1,8 +1,14 @@
 "use client";
-import { Button, Checkbox, DatePicker, Form, FormProps, Input, Select, Row, Col } from 'antd';
-import { Option } from 'antd/es/mentions';
+import React, { useState } from 'react';
+import { Button, Checkbox, DatePicker, Form, FormProps, Input, Select, Row, Col, Upload } from 'antd';
+import styles from './forms.module.scss';
+import { PlusOutlined } from '@ant-design/icons';
 import './styles.scss';
 import Link from 'next/link';
+const { TextArea } = Input;
+const { Option } = Select;
+import type { GetProp, UploadProps } from 'antd';
+
 
 type FieldType = {
   name?: string;
@@ -14,6 +20,25 @@ type FieldType = {
   race?: string;
   weight?: string;
   gender?: string;
+};
+
+type ReportingUserAddType = {
+  name: string;
+  surname: string;
+  email: string;
+  phone: string;
+};
+
+type FormType = {
+  animals: FieldType[],
+  reporting_user: ReportingUserAddType;
+  title: string;
+  description: string;
+  image: string;
+  abandonment_location: string;
+  abandonment_status: string;
+  abandaonmet_date: string;
+  observations: string;
 };
 
 const prefixSelector = (
@@ -32,14 +57,21 @@ const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
 const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
   console.log('Failed:', errorInfo);
 };
+const normFile = (e: any) => {
+  if (Array.isArray(e)) {
+    return e;
+  }
+  return e?.fileList;
+};
+
 export const ReportAnimalsForm = () => {
     const [form] = Form.useForm();
     return (
         <div className="container mx-auto">
         <div className="flex justify-center px-6 my-12">
-          <div className="w-full xl:w-3/4 lg:w-11/12 flex">
+          <div className="w-full xl:w-3/4 ">
   
-            <div className="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
+            <div className="w-full bg-white p-5 rounded-lg lg:rounded-l-none">
               <h2 className="pt-4 text-3xl font-bold">Reportanos a un animal a <strong className='text-indigo-700'>Adopet</strong></h2>
               <p className='text-sm mb-4'>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. At harum neque, suscipit impedit velit voluptatum sit beatae eaque repellat consectetur aperiam laudantium.
@@ -74,8 +106,15 @@ export const ReportAnimalsForm = () => {
                     <Form.Item<FieldType>
                       name="image"
                       rules={[{ required: true, message: 'Please upload an image!' }]}
-                    >
-                      <Input type='file' placeholder='N° de Documento' />
+                      label="Imagen del animal" valuePropName="fileList"
+                      getValueFromEvent={normFile}
+                      >
+                      <Upload action="/upload.do" listType="picture-card">
+                        <button style={{ border: 0, background: 'none' }} type="button">
+                          <PlusOutlined />
+                          <div style={{ marginTop: 8 }}>Upload</div>
+                        </button>
+                      </Upload>
                     </Form.Item>
                   </Col>
                   <Col span={12}>
@@ -83,7 +122,7 @@ export const ReportAnimalsForm = () => {
                       name="description"
                       rules={[{ required: true, message: 'Please input birth date!' }]}
                     >
-                      <textarea placeholder='Descripción'> </textarea>
+                      <TextArea placeholder='Descripción' />
                     </Form.Item>
                   </Col>
                 </Row>
@@ -123,13 +162,75 @@ export const ReportAnimalsForm = () => {
                     </Form.Item>
                   </Col>
                 </Row>
+                <Row gutter={16}>
+                  <Col span={12}>
+                    <Form.Item<FieldType>
+                      name="gender"
+                      rules={[{ required: true, message: 'Please choose the sex!', whitespace: true }]}
+                    >
+                      <Select placeholder='Sexo'>
+                        <Option value="male">Male</Option>
+                        <Option value="female">Female</Option>  
+                      </Select>
+                    </Form.Item>
+                  </Col>
+                </Row>
+
+                <Row gutter={24}>
+                  <Col className="gutter-row" span={24}>
+                    <div className="subtitleFile">
+                      <label>
+                      <h2 className="pt-4 text-3xl font-bold">Datos del lugar de abandono </h2>
+                      <br></br>
+                      </label>
+                    </div>
+                  </Col>
+                </Row>
+
+                <Row gutter={16}>
+                <Col span={12}>
+                  <Form.Item<FormType>
+                    name="abandaonmet_date"
+                    rules={[{ required: true, message: 'Please input birth date!' }]}
+                  >
+                    <DatePicker placeholder='Fecha de abandono' style={{ width: '100%' }} />
+                  </Form.Item>
+                </Col>
+                  <Col span={12}>
+                    <Form.Item<FormType>
+                      name="abandonment_status"
+                      rules={[{ required: true, message: 'Please input your username!', whitespace: true }]}
+                    >
+                      <Input type='text' placeholder='Estado del abandono' />
+                    </Form.Item>
+                  </Col>
+                </Row>
+                <Row gutter={24}>
+                  <Col span={24}>
+                    <Form.Item<FormType>
+                      name="abandonment_location"
+                      rules={[{ required: true, message: 'Please input your username!', whitespace: true }]}
+                    >
+                      <Input type='text' placeholder='Lugar del abandono' />
+                    </Form.Item>
+                  </Col>
+                </Row>
+                <Row gutter={24}>
+                  <Col span={24}>
+                    <Form.Item<FormType>
+                      name="observations"
+                      rules={[{ required: true, message: 'Please input your username!', whitespace: true }]}
+                    >
+                      <TextArea placeholder='Observaciones' />
+                    </Form.Item>
+                  </Col>
+                </Row>
+              
                 
+
                 <Form.Item className='float-end'>
-                  <Button className='mr-2' htmlType="submit" shape="round">
-                    Registrarme como fundación
-                  </Button>
-                  <Button type="primary" htmlType="submit" shape="round">
-                    Registrarme
+                  <Button type="primary" htmlType="submit" shape="round" className="buttonSubmit">
+                    Registrar animal
                   </Button>
                 </Form.Item>
               </Form>

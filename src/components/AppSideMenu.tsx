@@ -1,6 +1,6 @@
 "use client";
 import { MenuItem, routeToKeyMap } from '@/utils/menu-helper';
-import { IconHeartStar, IconPaw, IconUsersGroup } from '@tabler/icons-react';
+import { IconDog, IconHeartStar, IconPaw, IconUsersGroup } from '@tabler/icons-react';
 import { Menu } from 'antd';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -37,6 +37,11 @@ export const AppSideMenu = () => {
       label: <Link href="/admin/my-animal-reports">Mis Reportes</Link>,
       key: "4",
       icon: <IconHeartStar stroke={1} size={16} />
+    },
+     {
+      label: <Link href="/admin/pending-rescues">Rescates Pendientes</Link>,
+      key: "5",
+      icon: <IconDog  stroke={1} size={16} />
     },
   ];
 

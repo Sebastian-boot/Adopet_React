@@ -4,7 +4,7 @@ import { ReportAbandonedAnimal, ReportAbandonedAnimalAddType, ReportAbandonedAni
 import { ServiceResponse } from "../models/fetch";
 
 class ReportAbandonedAnimalService {
-    static url = process.env.API_LARAVEL_URL + ApiResources.REPORT_ABANDONED_ANIMAL;
+    static url = process.env.NEXT_PUBLIC_API_LARAVEL_URL + ApiResources.REPORT_ABANDONED_ANIMAL;
 
     public static async fetch() {
         return await FetchService.get<ReportAbandonedAnimalResponse>({url: this.url});

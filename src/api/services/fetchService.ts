@@ -49,7 +49,7 @@ class FetchService {
         sr.httpCode = response.status
 
         if(response.ok){
-            if(response.status === 200) sr.data = (await response.json()) as T;
+            if(response.status === 200) sr.response = (await response.json()) as T;
             return sr;
         }
 

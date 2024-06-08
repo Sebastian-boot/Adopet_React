@@ -61,7 +61,7 @@ const PendingRescue: React.FC = () => {
       try {
         const sr = await ReportAbandonedAnimalService.fetch();
         if(sr.status()){
-          setData(sr.data ?? null)
+          setData(sr.response ?? null)
         }else {
           setError(sr.errors[0] as Error)
         }

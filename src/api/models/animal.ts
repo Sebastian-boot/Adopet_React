@@ -11,3 +11,15 @@ export interface Animal {
     status?: string;
     gender: string;
 }
+
+export type AnimalAddType = {
+    name: string;
+    image: string;
+    description: string;
+    age?: number
+    coat_color?: string;
+    especie: string;
+    race?: string;
+    weight?:  number;
+    gender?: string;
+}

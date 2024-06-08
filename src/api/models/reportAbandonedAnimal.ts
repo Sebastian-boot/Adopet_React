@@ -1,4 +1,5 @@
-import { Animal } from "./animal";
+import { Animal, AnimalAddType } from "./animal";
+import { ReportingUserAddType } from "./reportingUser";
 
 export interface ReportAbandonedAnimal {
     id: number;
@@ -20,4 +21,15 @@ export interface ReportAbandonedAnimalResponse {
     success: boolean;
     message: string;
     data:   ReportAbandonedAnimal[];
+}
+
+
+export type ReportAbandonedAnimalAddType = {
+    animals: AnimalAddType[],
+    reporting_user: ReportingUserAddType;
+    title: string;
+    description: string;
+    image: string;
+    abandonment_location: string;
+    abandonment_status: string;
 }

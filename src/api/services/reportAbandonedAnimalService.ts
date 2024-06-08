@@ -9,6 +9,10 @@ class ReportAbandonedAnimalService {
         return await FetchService.get<ReportAbandonedAnimalResponse>({url: this.url});
     }
 
+    public static async post<Fie>() {
+        return await FetchService.get<ReportAbandonedAnimalResponse>({url: this.url});
+    }
+
 }
 
 export default ReportAbandonedAnimalService;
